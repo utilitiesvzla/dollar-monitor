@@ -1,6 +1,12 @@
 # Dollar monitor
 Average price in dollars for Venezuela
 
+# Source methods available
+- [x] `DolarToday (https://dolartoday.com)`
+- [x] `BolivarCucuta (http://bolivarcucuta.com)`
+- [x] `YadioIO (https://yadio.io)`
+- [x] `The  (https://rates.airtm.com)`
+
 # Example
 ```ts
 import { DolartodayService } from 'dollar-monitor'
