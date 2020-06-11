@@ -8,6 +8,7 @@ Average price in dollars for Venezuela
 - [x] `BolivarCucuta (http://bolivarcucuta.com)`
 - [x] `YadioIO (https://yadio.io)`
 - [x] `The Airtm (https://rates.airtm.com)`
+- [x] `Localbitcoin (https://localbitcoins.com)`
 
 # Example
 ```ts
