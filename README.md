@@ -20,4 +20,4 @@ import { DolartodayService } from 'dollar-monitor'
   console.log(rate)
 })()
 ```
-[More examples](https://github.com/Sansossio/dollar-monitor/tree/master/example)
+[More examples](https://github.com/dolarvzla/dollar-monitor/tree/master/example)

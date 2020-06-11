@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sansossio/dollar-monitor.git"
+    "url": "git+https://github.com/dolarvzla/dollar-monitor.git"
   },
   "keywords": [
     "dollar",
@@ -25,9 +25,9 @@
   "author": "Julio Sansossio",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Sansossio/dollar-monitor/issues"
+    "url": "https://github.com/dolarvzla/dollar-monitor/issues"
   },
-  "homepage": "https://github.com/Sansossio/dollar-monitor#readme",
+  "homepage": "https://github.com/dolarvzla/dollar-monitor#readme",
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "@types/jsdom": "^16.2.3",
