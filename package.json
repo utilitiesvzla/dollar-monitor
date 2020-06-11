@@ -32,7 +32,6 @@
     "@types/jest": "^25.2.1",
     "@types/jsdom": "^16.2.3",
     "@types/node": "^13.13.5",
-    "@types/reflect-metadata": "^0.1.0",
     "jest": "^25.3.0",
     "ts-jest": "^25.5.1",
     "ts-node": "^8.10.1",
