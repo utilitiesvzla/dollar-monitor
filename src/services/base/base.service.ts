@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export class BaseService {
-  protected getDate (url: string) {
+  protected getData (url: string) {
     return axios(url)
   }
 }
