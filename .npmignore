@@ -3,3 +3,4 @@ src
 example
 .github
 .vscode
+dist/tsconfig.tsbuildinfo
