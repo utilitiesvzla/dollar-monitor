@@ -4,6 +4,6 @@ import { BaseService } from '../base/base.service'
 export class YadioIOService extends BaseService {
   static async getPrice () {
     const data = await this.getData(config.API_URL)
-    return data.USD.rate
+    return data.USD.rate as number
   }
 }

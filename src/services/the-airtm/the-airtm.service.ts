@@ -13,6 +13,6 @@ export class TheAirTMService extends BaseService {
   static async getPrice () {
     const d = await TheAirTMService.getToday()
     const data = await this.getData(config.API_URL, { d })
-    return data.today.VES_BANK.buy
+    return data.today.VES_BANK.buy as number
   }
 }
