@@ -30,6 +30,7 @@
   "homepage": "https://github.com/Sansossio/dependency-injection#readme",
   "devDependencies": {
     "@types/jest": "^25.2.1",
+    "@types/jsdom": "^16.2.3",
     "@types/node": "^13.13.5",
     "@types/reflect-metadata": "^0.1.0",
     "jest": "^25.3.0",
@@ -41,6 +42,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "jsdom": "^16.2.2"
   }
 }
