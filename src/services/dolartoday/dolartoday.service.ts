@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { config } from './dolartoday.config'
 import { BaseService } from '../base/base.service'
 
