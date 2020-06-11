@@ -5,7 +5,7 @@ Average price in dollars for Venezuela
 - [x] `DolarToday (https://dolartoday.com)`
 - [x] `BolivarCucuta (http://bolivarcucuta.com)`
 - [x] `YadioIO (https://yadio.io)`
-- [x] `The  (https://rates.airtm.com)`
+- [x] `The Airtm (https://rates.airtm.com)`
 
 # Example
 ```ts
