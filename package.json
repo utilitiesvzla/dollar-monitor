@@ -1,0 +1,44 @@
+{
+  "name": "dollar-monitor",
+  "version": "0.0.12",
+  "description": "Average price in dollars for Venezuela",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "start": "node dist",
+    "start:test": "tsnd test.ts",
+    "start:dev": "tsnd --watch -- src",
+    "start:debug": "tsnd --inspect --watch -- src",
+    "lint": "tslint --project tsconfig.json",
+    "lint:fix": "tslint --project tsconfig.json --fix",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sansossio/dependency-injection.git"
+  },
+  "keywords": [
+    "dollar",
+    "venezuela"
+  ],
+  "author": "Julio Sansossio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sansossio/dependency-injection/issues"
+  },
+  "homepage": "https://github.com/Sansossio/dependency-injection#readme",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.5",
+    "@types/reflect-metadata": "^0.1.0",
+    "jest": "^25.3.0",
+    "ts-jest": "^25.5.1",
+    "ts-node": "^8.10.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "tslint": "^6.1.2",
+    "tslint-config-standard": "^9.0.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {}
+}
