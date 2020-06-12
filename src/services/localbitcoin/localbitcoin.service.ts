@@ -1,9 +1,11 @@
 import { BaseService } from '../base/base.service'
-import { config } from '../dolartoday/dolartoday.config'
+import { config } from './localbitcoin.config'
 
 export class LocalBitcoinService extends BaseService {
   static async getPrice () {
     const data = await this.getData(config.API_URL)
-    return Math.max(data.USD.localbitcoin_ref, data.USD.bitcoin_ref)
+    const usdPerBtc = +data.USD.avg_1h
+    const vesPerBtc = +data.VES.avg_1h
+    return vesPerBtc / usdPerBtc
   }
 }
