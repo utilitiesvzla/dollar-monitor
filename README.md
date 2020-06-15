@@ -9,6 +9,8 @@ Average price in dollars for Venezuela
 - [x] `YadioIO (https://yadio.io)`
 - [x] `The Airtm (https://rates.airtm.com)`
 - [x] `Localbitcoin (https://localbitcoins.com)`
+- [x] `BCV (http://bcv.org.ve)`
+- [x] `Petro (https://www.petro.gob.ve)`
 
 # Example
 ```ts
