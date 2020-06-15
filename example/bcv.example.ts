@@ -1,7 +1,7 @@
 import { BcvService } from '../src'
 
 (async () => {
-  // Get yadioio rate
+  // Get bcv rate
   const rate = await BcvService.getPrice()
   console.log(rate)
 })()
