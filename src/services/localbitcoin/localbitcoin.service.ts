@@ -6,6 +6,6 @@ export class LocalBitcoinService extends BaseService {
     const data = await this.getData(config.API_URL)
     const usdPerBtc = +data.USD.avg_1h
     const vesPerBtc = +data.VES.avg_1h
-    return vesPerBtc / usdPerBtc
+    return +(vesPerBtc / usdPerBtc).toFixed(2)
   }
 }
