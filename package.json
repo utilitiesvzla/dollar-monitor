@@ -1,6 +1,6 @@
 {
   "name": "dollar-monitor",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Average price in dollars for Venezuela",
   "main": "dist/index.js",
   "scripts": {
