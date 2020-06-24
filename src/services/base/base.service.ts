@@ -1,9 +1,17 @@
 import axios from 'axios'
 import * as _ from 'lodash'
 import { IBaseConfig } from './base.config'
+import { appConfig } from '../../app.config'
 
 export class BaseService {
+  // Set request max timeout (ms), default: 5 seconds
+  public static requestTimeout: number
+
   protected static config: IBaseConfig
+
+  protected static getTimeout () {
+    return this.requestTimeout || appConfig.requestTimeout
+  }
 
   protected static async getData (url: string, params?) {
     // Prevent cache
@@ -12,7 +20,8 @@ export class BaseService {
     // Send request
     const { data } = await axios({
       url,
-      params
+      params,
+      timeout: this.getTimeout()
     })
     return data
   }
