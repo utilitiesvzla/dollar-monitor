@@ -11,6 +11,7 @@ Average price in dollars for Venezuela
 - [x] `Localbitcoin (https://localbitcoins.com)`
 - [x] `BCV (http://bcv.org.ve)`
 - [x] `Petro (https://www.petro.gob.ve)`
+- [x] `AKBfintech (https://americankryptosbank.com)`
 
 # Example
 ```ts
