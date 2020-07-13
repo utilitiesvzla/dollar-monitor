@@ -32,6 +32,9 @@ export class BaseService {
       throw new Error('Property config must be defined')
     }
     const data = await this.getData(config.API_URL)
-    return _.get(data, config.PATH)
+    if (config.PATH) {
+      return _.get(data, config.PATH)
+    }
+    return data
   }
 }
