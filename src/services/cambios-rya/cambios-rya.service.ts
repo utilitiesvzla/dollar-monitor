@@ -1,8 +1,8 @@
 import * as _ from 'lodash'
-import { config } from './mkambio.config'
+import { config } from './cambios-rya.config'
 import { BaseService } from '../base/base.service'
 
-export class MkambioService extends BaseService {
+export class CambiosRYAService extends BaseService {
   protected static config = config
 
   static async getPrice () {
