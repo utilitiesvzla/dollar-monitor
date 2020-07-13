@@ -12,6 +12,8 @@ Average price in dollars for Venezuela
 - [x] `BCV (http://bcv.org.ve)`
 - [x] `Petro (https://www.petro.gob.ve)`
 - [x] `AKBfintech (https://americankryptosbank.com)`
+- [x] `Mkambio (https://www.instagram.com/mkambio)`
+- [x] `CambiosRYA (https://www.instagram.com/cambiosrya)`
 
 # Example
 ```ts
