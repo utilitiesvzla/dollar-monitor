@@ -26,12 +26,13 @@ export class BaseService {
     return data
   }
 
-  static async getPrice (): Promise<number> {
+  static async getPrice (url?: string): Promise<number> {
     const { config } = this
+    const rateUrl = url || config.API_URL
     if (!config) {
       throw new Error('Property config must be defined')
     }
-    const data = await this.getData(config.API_URL)
+    const data = await this.getData(rateUrl)
     if (config.PATH) {
       return _.get(data, config.PATH)
     }
