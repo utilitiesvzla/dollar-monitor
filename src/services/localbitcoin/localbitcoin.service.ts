@@ -2,7 +2,7 @@ import { BaseService } from '../base/base.service'
 import { config } from './localbitcoin.config'
 import { DolartodayBtcService } from '../dolartoday-btc/dolartoday-btc.service'
 
-const VALUE_KEY = 'avg_1h'
+const VALUE_KEY = 'avg_12h'
 
 export class LocalBitcoinService extends BaseService {
   static async getPrice () {
