@@ -1,4 +1,3 @@
-import { ExchangemonitorService } from '../exchangemonitor/exchangemonitor.service'
 import { TheAirTMServicePlain } from './service/the-airtm-plain.service'
 import { TheAirTMServiceExchangeMonitor } from './service/the-airtm-exchange-monitor.service'
 
