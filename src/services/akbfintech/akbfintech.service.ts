@@ -1,6 +1,11 @@
 import { config } from './akbfintech.config'
-import { ExchangemonitorService } from '../exchangemonitor/exchangemonitor.service'
+import { BaseService } from '../base/base.service'
 
-export class AKBfintechService extends ExchangemonitorService {
+export class AKBfintechService extends BaseService {
   protected static config = config
+
+  static async getPrice () {
+    const data = await AKBfintechService.getData(AKBfintechService.config.API_URL)
+    return data.original
+  }
 }
