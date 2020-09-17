@@ -10,6 +10,6 @@ export class LocalBitcoinService extends BaseService {
       USD,
       VES
     } = data
-    return +VES.avg_1h / +USD.avg_24h
+    return +(VES.avg_1h || VES.avg_12h) / +USD.avg_24h
   }
 }
