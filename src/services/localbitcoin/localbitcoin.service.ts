@@ -10,8 +10,8 @@ const INFORMATION_KEYS = [
   'avg_24h'
 ]
 
-const MIN = 4.5
-const MAX = 5.2
+const MIN = 7.2
+const MAX = 9.5
 
 export class LocalBitcoinService extends BaseService {
   static config = config
@@ -23,12 +23,15 @@ export class LocalBitcoinService extends BaseService {
       VES
     } = data
     const allPrices: { key: string, price: number }[] = []
+    const overPrice = this.getOverPrice(MIN, MAX)
     for (const key of INFORMATION_KEYS) {
-      const price = (+(_.get(VES, key) || _.get(VES, 'avg_12h')) / +_.get(USD, key)) * this.getOverPrice(MIN, MAX)
-      allPrices.push({
-        key,
-        price
-      })
+      const price = (+(_.get(VES, key) || _.get(VES, 'avg_12h')) / +_.get(USD, key)) * overPrice
+      if (price) {
+        allPrices.push({
+          key,
+          price
+        })
+      }
     }
     return Math.max(...allPrices.map(({ price }) => price))
   }
