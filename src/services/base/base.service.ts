@@ -9,10 +9,6 @@ export class BaseService {
 
   protected static config: IBaseConfig
 
-  protected static getOverPrice (min: number, max: number) {
-    return (1 + (_.random(min, max, true) / 100))
-  }
-
   protected static getTimeout () {
     return this.requestTimeout || appConfig.requestTimeout
   }
