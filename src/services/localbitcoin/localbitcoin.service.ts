@@ -3,16 +3,7 @@ import { BaseService } from '../base/base.service'
 import { JSDOM } from 'jsdom'
 import * as _ from 'lodash'
 
-const INFORMATION_KEYS = [
-  'rates.last',
-  'avg_1h',
-  'avg_6h',
-  'avg_12h',
-  'avg_24h'
-]
-
-const MIN = 7.2
-const MAX = 9.5
+const MAX = 10
 
 export class LocalBitcoinService extends BaseService {
   static config = config
@@ -49,6 +40,9 @@ export class LocalBitcoinService extends BaseService {
     for (const element of elements) {
       const value = this.parseValue(element.textContent)
       prices.push(value)
+    }
+    if (prices.length > MAX) {
+      return prices.sort(price => -price).slice(0, MAX - 1)
     }
     return prices
   }
