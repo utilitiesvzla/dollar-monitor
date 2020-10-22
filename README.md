@@ -14,7 +14,6 @@ Average price in dollars for Venezuela
 - [x] `AKBfintech (https://americankryptosbank.com)`
 - [x] `Mkambio (https://www.instagram.com/mkambio)`
 - [x] `CambiosRYA (https://www.instagram.com/cambiosrya)`
-- [x] `Dolarcucuta (https://dolarcucuta.com)`
 
 # Example
 ```ts
