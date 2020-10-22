@@ -48,8 +48,10 @@ export class LocalBitcoinService extends BaseService {
   }
 
   static async getPrice () {
-    const values = await this.getValues()
-    const btcValue = await this.getBtcPrice()
+    const [values, btcValue] = await Promise.all([
+      this.getValues(),
+      this.getBtcPrice()
+    ])
     const average = values.reduce((prev, curr) => prev + curr, 0) / values.length
     return average / btcValue
   }
