@@ -78,7 +78,6 @@ export class LocalBitcoinService extends BaseService {
         prices = prices.sort(price => -price).slice(0, MAX_API - 1)
       }
       const sum = prices.reduce((prev, curr) => prev + curr, 0) / prices.length
-      throw new Error()
       return sum / btcValue
     } catch (e) {
       console.error('localbitcoin getPriceFromApi', e)
