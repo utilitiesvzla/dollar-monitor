@@ -2,6 +2,7 @@ import { config } from './localbitcoin.config'
 import { BaseService } from '../base/base.service'
 import { JSDOM } from 'jsdom'
 import * as _ from 'lodash'
+import { DolartodayLocalbitcoinService } from '../dolartoday-localbitcoins/dolartoday-localbitcoins.service'
 
 const MAX = 10
 
@@ -53,6 +54,6 @@ export class LocalBitcoinService extends BaseService {
       this.getBtcPrice()
     ])
     const average = values.reduce((prev, curr) => prev + curr, 0) / values.length
-    return average / btcValue
+    return (average / btcValue) || DolartodayLocalbitcoinService.getPrice()
   }
 }
