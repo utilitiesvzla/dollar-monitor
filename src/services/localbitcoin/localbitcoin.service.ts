@@ -49,11 +49,15 @@ export class LocalBitcoinService extends BaseService {
   }
 
   static async getPrice () {
-    const [values, btcValue] = await Promise.all([
-      this.getValues(),
-      this.getBtcPrice()
-    ])
-    const average = values.reduce((prev, curr) => prev + curr, 0) / values.length
-    return (average / btcValue) || DolartodayLocalbitcoinService.getPrice()
+    try {
+      const [values, btcValue] = await Promise.all([
+        this.getValues(),
+        this.getBtcPrice()
+      ])
+      const average = values.reduce((prev, curr) => prev + curr, 0) / values.length
+      return (average / btcValue) || DolartodayLocalbitcoinService.getPrice()
+    } catch (E) {
+      return DolartodayLocalbitcoinService.getPrice()
+    }
   }
 }
