@@ -4,7 +4,8 @@ import { JSDOM } from 'jsdom'
 import * as _ from 'lodash'
 import { DolartodayLocalbitcoinService } from '../dolartoday-localbitcoins/dolartoday-localbitcoins.service'
 
-const MAX = 10
+const MAX_WEB = 10
+const MAX_API = 30
 
 export class LocalBitcoinService extends BaseService {
   static config = config
@@ -42,22 +43,51 @@ export class LocalBitcoinService extends BaseService {
       const value = this.parseValue(element.textContent)
       prices.push(value)
     }
-    if (prices.length > MAX) {
-      return prices.sort(price => -price).slice(0, MAX - 1)
+    if (prices.length > MAX_WEB) {
+      return prices.sort(price => -price).slice(0, MAX_WEB - 1)
     }
     return prices
   }
 
-  static async getPrice () {
+  private static async getPricesFromWeb (btcValue: number) {
     try {
-      const [values, btcValue] = await Promise.all([
-        this.getValues(),
-        this.getBtcPrice()
-      ])
+      const values = await this.getValues()
       const average = values.reduce((prev, curr) => prev + curr, 0) / values.length
-      return (average / btcValue) || DolartodayLocalbitcoinService.getPrice()
-    } catch (E) {
-      return DolartodayLocalbitcoinService.getPrice()
+      return (average / btcValue)
+    } catch (e) {
+      console.error('localbitcoin getPricesFromWeb', e)
+      return 0
     }
+  }
+
+  private static async getPriceFromApi (btcValue) {
+    try {
+      const {
+        data: {
+          ad_list = []
+        } = {} as any
+      } = await BaseService.getData(config.API_API_URL)
+      let prices = ad_list
+        .map(({ data }) => data)
+        .sort((a, b) =>
+          new Date(b.created_at).getTime() -
+          new Date(a.created_at).getTime()
+        )
+      prices = prices.map(({ temp_price }) => +temp_price)
+      if (prices.length > MAX_API) {
+        prices = prices.sort(price => -price).slice(0, MAX_API - 1)
+      }
+      const sum = prices.reduce((prev, curr) => prev + curr, 0) / prices.length
+      throw new Error()
+      return sum / btcValue
+    } catch (e) {
+      console.error('localbitcoin getPriceFromApi', e)
+      return 0
+    }
+  }
+
+  static async getPrice (): Promise<number> {
+    const btcPrice = await this.getBtcPrice()
+    return await LocalBitcoinService.getPriceFromApi(btcPrice) || await LocalBitcoinService.getPricesFromWeb(btcPrice) || DolartodayLocalbitcoinService.getPrice()
   }
 }
