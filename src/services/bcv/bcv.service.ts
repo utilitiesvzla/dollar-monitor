@@ -5,8 +5,8 @@ import { JSDOM } from 'jsdom'
 export class BcvService extends BaseService {
   private static parseValue (value: string) {
     return +value
-      .replace('.', '')
-      .replace(',', '.')
+      .replace(/\./gm, '')
+      .replace(/\,/gm, '.')
   }
 
   static async getPrice () {
