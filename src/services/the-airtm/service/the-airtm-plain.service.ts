@@ -38,6 +38,10 @@ export class TheAirTMServicePlain extends BaseService {
 
     const response = values.today.length ? values.today : values.yesterday
 
+    if (!response.length) {
+      throw new Error('No values found')
+    }
+
     return Math.max(...response)
   }
 }

@@ -1,5 +1,5 @@
 import { IBaseConfig } from '../base/base.config'
 
 export const config: IBaseConfig = {
-  API_URL: 'https://exchangemonitor.net/rates/ve/data/AirTM.json'
+  API_URL: 'https://exchangemonitor.net/rates/ve/data/airtm.json'
 }
