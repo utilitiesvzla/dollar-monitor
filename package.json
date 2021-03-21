@@ -40,6 +40,6 @@
   "dependencies": {
     "axios": "^0.21.1",
     "jsdom": "^16.2.2",
-    "lodash": "^4.17.15"
+    "lodash": "4.17.19"
   }
 }
