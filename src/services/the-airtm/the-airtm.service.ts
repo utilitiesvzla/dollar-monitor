@@ -1,18 +1,12 @@
-import { config } from './the-airtm.config'
-import { BaseService } from '../base/base.service'
-import { JSDOM } from 'jsdom'
+import { TheAirTMServicePlain } from './service/the-airtm-plain.service'
+import { TheAirTMServiceExchangeMonitor } from './service/the-airtm-exchange-monitor.service'
 
-export class TheAirTMService extends BaseService {
-  private static async getToday () {
-    const websiteData = await this.getData(config.INFO_URL)
-    const html = new JSDOM(websiteData)
-    const element = html.window.document.getElementById('last_time')
-    return (element as any).defaultValue
-  }
-
+export class TheAirTMService {
   static async getPrice () {
-    const d = await TheAirTMService.getToday()
-    const data = await this.getData(config.API_URL, { d })
-    return data.today.VES_BANK.buy as number
+    try {
+      return await TheAirTMServicePlain.getPrice()
+    } catch (e) {
+      return TheAirTMServiceExchangeMonitor.getPrice()
+    }
   }
 }
