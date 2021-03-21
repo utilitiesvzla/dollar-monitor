@@ -1,6 +1,6 @@
 {
   "name": "dollar-monitor",
-  "version": "0.50.0",
+  "version": "0.51.0",
   "description": "Average price in dollars for Venezuela",
   "main": "dist/index.js",
   "scripts": {
@@ -38,7 +38,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "jsdom": "^16.2.2",
     "lodash": "^4.17.15"
   }
