@@ -25,7 +25,7 @@ export class LocalBitcoinService extends BaseService {
     const price = html
       .window
       .document
-      .getElementsByClassName('priceValue___11gHJ')[0]
+      .getElementsByClassName('priceValue')[0]
       .textContent
     return this.parseValue(price) || 0
   }
