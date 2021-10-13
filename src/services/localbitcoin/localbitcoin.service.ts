@@ -73,7 +73,15 @@ export class LocalBitcoinService extends BaseService {
           new Date(b.created_at).getTime() -
           new Date(a.created_at).getTime()
         )
-      prices = prices.map(({ temp_price }) => +temp_price)
+      prices = prices
+        .map(({ temp_price }) => +temp_price)
+        .map(price => {
+          // 2021 Oct reconvertion
+          if (new Date().getFullYear() === 2021 && price > 1000000) {
+            return price / 1000000
+          }
+          return price
+        })
       if (prices.length > MAX_API) {
         prices = prices.sort(price => -price).slice(0, MAX_API - 1)
       }
