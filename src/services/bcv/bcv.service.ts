@@ -20,7 +20,7 @@ export class BcvService extends BaseService {
     for (let i = 0; i < elements.length; i++) {
       const element = elements[i]
       const value = element.textContent.trim()
-      if (/\d+.\d+,\d+/g.test(value)) {
+      if (/\d+,\d+/g.test(value)) {
         return this.parseValue(value)
       }
     }
