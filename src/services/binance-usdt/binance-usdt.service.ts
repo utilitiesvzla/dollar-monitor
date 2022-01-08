@@ -21,9 +21,12 @@ export class BinanceUsdtService extends BaseService {
 
   static async getPrice (url?: string): Promise<number> {
     const data = await this.getData(url || this.config.API_URL)
-    const totalPrice = data.reduce((prev, curr) => {
+    const dataParsed = data
+      .sort((a, b) => b.adv.price - a.adv.price)
+      .slice(0, Math.floor(data.length / 2))
+    const totalPrice = dataParsed.reduce((prev, curr) => {
       return +curr.adv.price + prev
     }, 0)
-    return totalPrice / data.length
+    return totalPrice / dataParsed.length
   }
 }
