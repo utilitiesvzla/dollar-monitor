@@ -17,5 +17,3 @@ export class PetroService extends BaseService {
     return data.PTR.BS
   }
 }
-
-PetroService.getPrice()
