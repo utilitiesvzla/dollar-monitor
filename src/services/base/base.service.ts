@@ -1,7 +1,12 @@
 import axios from 'axios'
 import * as _ from 'lodash'
+import * as https from 'https'
 import { IBaseConfig } from './base.config'
 import { appConfig } from '../../app.config'
+
+const agent = new https.Agent({
+  rejectUnauthorized: false
+})
 
 export class BaseService {
   // Set request max timeout (ms), default: 5 seconds
@@ -21,7 +26,8 @@ export class BaseService {
     const { data } = await axios({
       url,
       params,
-      timeout: this.getTimeout()
+      timeout: this.getTimeout(),
+      httpsAgent: agent,
     })
     return data
   }
